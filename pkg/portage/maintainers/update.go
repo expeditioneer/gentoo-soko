@@ -150,15 +150,6 @@ func deleteAllMaintainers() {
 	}
 }
 
-func contains(element string, elements []string) bool {
-	for _, el := range elements {
-		if element == el {
-			return true
-		}
-	}
-	return false
-}
-
 func updateStatus() {
 	database.DBCon.Model(&models.Application{
 		Id:         "maintainers",
