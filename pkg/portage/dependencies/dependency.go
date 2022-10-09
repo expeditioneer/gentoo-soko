@@ -1,7 +1,6 @@
 package dependencies
 
 import (
-	"fmt"
 	"github.com/expeditioneer/gentoo-soko/pkg/config"
 	"github.com/expeditioneer/gentoo-soko/pkg/database"
 	"github.com/expeditioneer/gentoo-soko/pkg/logger"
@@ -198,31 +197,6 @@ func deleteAllDependencies() {
 	for _, reverseDependency := range reverseDependencies {
 		database.DBCon.Model(reverseDependency).WherePK().Delete()
 	}
-}
-
-func deleteOutdatedDependencies(newDependencies []*models.ReverseDependency) {
-	var oldDependencies []*models.ReverseDependency
-	database.DBCon.Model(&oldDependencies).Select()
-
-	for index, oldDependency := range oldDependencies {
-
-		if index%10000 == 0 {
-			fmt.Println(time.Now().Format(time.Kitchen) + ": " + strconv.Itoa(index) + " / " + strconv.Itoa(len(oldDependencies)))
-		}
-
-		found := false
-		for _, newDependency := range newDependencies {
-			if oldDependency.Id == newDependency.Id {
-				found = true
-			}
-		}
-
-		if !found {
-			database.DBCon.Model(oldDependency).WherePK().Delete()
-		}
-
-	}
-
 }
 
 func updateStatus() {
