@@ -139,7 +139,7 @@ func UpdatePullRequestsAfter(isOpen bool, lastUpdated, after string) {
 	jsonData := buildQuery(100, isOpen, lastUpdated, after)
 
 	jsonValue, _ := json.Marshal(jsonData)
-	request, err := http.NewRequest("POST", "https://api.github.com/graphql", bytes.NewBuffer(jsonValue))
+	request, _ := http.NewRequest("POST", "https://api.github.com/graphql", bytes.NewBuffer(jsonValue))
 	request.Header.Set("Authorization", "bearer "+config.GithubAPIToken())
 	client := &http.Client{Timeout: time.Second * 30}
 	response, err := client.Do(request)
@@ -151,7 +151,7 @@ func UpdatePullRequestsAfter(isOpen bool, lastUpdated, after string) {
 	data, _ := ioutil.ReadAll(response.Body)
 
 	var prData models.GitHubPullRequestQueryResult
-	err = json.Unmarshal([]byte(data), &prData)
+	json.Unmarshal([]byte(data), &prData)
 
 	pullrequests := prData.CreatePullRequest()
 
