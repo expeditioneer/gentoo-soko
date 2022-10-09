@@ -23,7 +23,7 @@ func Search(w http.ResponseWriter, r *http.Request) {
 		var maintainers []models.Maintainer
 		database.DBCon.Model(&maintainers).Where("email = ?", searchTerm).Select()
 		if len(maintainers) > 0 {
-			http.Redirect(w, r, "/maintainer/"+searchTerm, 301)
+			http.Redirect(w, r, "/maintainer/"+searchTerm, http.StatusMovedPermanently)
 			return
 		}
 	}
