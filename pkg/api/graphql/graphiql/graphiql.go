@@ -1,9 +1,9 @@
 package graphiql
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
 	"html/template"
 	"net/http"
-	"soko/pkg/config"
 )
 
 func Show(w http.ResponseWriter, r *http.Request) {

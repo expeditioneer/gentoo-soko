@@ -1,10 +1,10 @@
 package maintainers
 
 import (
-	"soko/pkg/config"
-	"soko/pkg/database"
-	"soko/pkg/models"
-	"soko/pkg/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/utils"
 	"sort"
 	"strings"
 	"time"

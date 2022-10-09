@@ -3,11 +3,11 @@ package maintainer
 import (
 	"crypto/md5"
 	"encoding/hex"
+	"github.com/expeditioneer/gentoo-soko/pkg/app/handler/packages"
+	"github.com/expeditioneer/gentoo-soko/pkg/app/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"html/template"
 	"net/http"
-	"soko/pkg/app/handler/packages"
-	"soko/pkg/app/utils"
-	"soko/pkg/models"
 	"sort"
 	"strings"
 )

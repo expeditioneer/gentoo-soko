@@ -3,12 +3,12 @@
 package repository
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/utils"
 	"regexp"
-	"soko/pkg/config"
-	"soko/pkg/database"
-	"soko/pkg/logger"
-	"soko/pkg/models"
-	"soko/pkg/portage/utils"
 	"strings"
 )
 

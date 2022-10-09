@@ -4,14 +4,14 @@ package index
 
 import (
 	b64 "encoding/base64"
+	"github.com/expeditioneer/gentoo-soko/pkg/app/handler/packages"
+	"github.com/expeditioneer/gentoo-soko/pkg/app/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/go-pg/pg/v9/orm"
 	"html/template"
 	"net/http"
 	"reflect"
-	"soko/pkg/app/handler/packages"
-	"soko/pkg/app/utils"
-	"soko/pkg/database"
-	"soko/pkg/models"
 	"strconv"
 	"strings"
 )

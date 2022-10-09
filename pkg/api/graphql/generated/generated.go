@@ -6,7 +6,7 @@ import (
 	"bytes"
 	"context"
 	"errors"
-	"soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"strconv"
 	"sync"
 	"time"
@@ -1799,7 +1799,7 @@ scalar Any
 	&ast.Source{Name: "pkg/api/graphql/schema/types/Bug.graphql", Input: `"Information about Bugs"
 type Bug
   @goModel(
-    model: "soko/pkg/models.Bug"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.Bug"
   ) {
 
   "The id of the bug."
@@ -1824,7 +1824,7 @@ type Bug
 	&ast.Source{Name: "pkg/api/graphql/schema/types/GithubPullRequest.graphql", Input: `"Information about Github PullRequest"
 type GithubPullRequest
   @goModel(
-    model: "soko/pkg/models.GithubPullRequest"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.GithubPullRequest"
   ) {
 
   "The id of the pull request."
@@ -1868,7 +1868,7 @@ type GithubPullRequest
 "Information about Github PullRequest Labels"
 type GitHubPullRequestLabelNode
 @goModel(
-  model: "soko/pkg/models.GitHubPullRequestLabelNode"
+  model: "github.com/expeditioneer/gentoo-soko/pkg/models.GitHubPullRequestLabelNode"
 ) {
 
   "The content / name of the label."
@@ -1884,7 +1884,7 @@ type GitHubPullRequestLabelNode
 "Information about Github PullRequest changed Files"
 type GitHubPullRequestFileNode
 @goModel(
-  model: "soko/pkg/models.GitHubPullRequestFileNode"
+  model: "github.com/expeditioneer/gentoo-soko/pkg/models.GitHubPullRequestFileNode"
 ) {
 
   "The path of the changed file."
@@ -1900,7 +1900,7 @@ type GitHubPullRequestFileNode
 	&ast.Source{Name: "pkg/api/graphql/schema/types/Mask.graphql", Input: `"A package's mask entry"
 type Mask
   @goModel(
-    model: "soko/pkg/models.Mask"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.Mask"
   ) {
 
   "A string that describes all versions that are affected by this mask entry"
@@ -1922,7 +1922,7 @@ type Mask
 	&ast.Source{Name: "pkg/api/graphql/schema/types/OutdatedPackage.graphql", Input: `"Information from repology about outdated packages in the Gentoo tree."
 type OutdatedPackage
   @goModel(
-    model: "soko/pkg/models.OutdatedPackages"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.OutdatedPackages"
   ) {
 
   "The atom of the affected package"
@@ -1938,7 +1938,7 @@ type OutdatedPackage
 	&ast.Source{Name: "pkg/api/graphql/schema/types/Package.graphql", Input: `"A Gentoo package"
 type Package
   @goModel(
-    model: "soko/pkg/models.Package"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.Package"
   ) {
 
   "The Atom of the package (category/package_name)"
@@ -1984,7 +1984,7 @@ type Package
 "Information about a maintainer of packages"
 type Maintainer
   @goModel(
-    model: "soko/pkg/models.Maintainer"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.Maintainer"
   ) {
 
   "The full name of the maintainer"
@@ -2003,7 +2003,7 @@ type Maintainer
 	&ast.Source{Name: "pkg/api/graphql/schema/types/PkgCheckResult.graphql", Input: `"A warning from pkgcheck for a version of a package"
 type PkgCheckResult
   @goModel(
-    model: "soko/pkg/models.PkgCheckResult"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.PkgCheckResult"
   ) {
 
   "The atom of the package that is affected by this pkgcheck warning"
@@ -2032,7 +2032,7 @@ type PkgCheckResult
 	&ast.Source{Name: "pkg/api/graphql/schema/types/ReverseDependency.graphql", Input: `"Information about Reverse Dependencies"
 type ReverseDependency
   @goModel(
-    model: "soko/pkg/models.ReverseDependency"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.ReverseDependency"
   ) {
 
   "The id."
@@ -2056,7 +2056,7 @@ type ReverseDependency
 	&ast.Source{Name: "pkg/api/graphql/schema/types/Version.graphql", Input: `"A version of a gentoo package"
 type Version
   @goModel(
-    model: "soko/pkg/models.Version"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.Version"
   ) {
   "The id i.e. CPV of a version to uniquely identify it"
   Id: String!
@@ -2119,7 +2119,7 @@ type Version
 	&ast.Source{Name: "pkg/api/graphql/schema/types/application.graphql", Input: `"Contains general information about the application"
 type Application
   @goModel(
-    model: "soko/pkg/models.Application"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.Application"
   ) {
   "The version of the currently running application"
   Version: String!
@@ -2134,7 +2134,7 @@ type Application
 	&ast.Source{Name: "pkg/api/graphql/schema/types/category.graphql", Input: `"Describes a Gentoo package category"
 type Category
   @goModel(
-    model: "soko/pkg/models.Category"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.Category"
   ) {
   "The name of the category"
   Name: String!
@@ -2149,7 +2149,7 @@ type Category
 	&ast.Source{Name: "pkg/api/graphql/schema/types/commit.graphql", Input: `"A commit in the gentoo.git repository"
 type Commit
   @goModel(
-    model: "soko/pkg/models.Commit"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.Commit"
   ) {
   "The hash of the commit, that is used to uniquely identify it"
   Id: String!
@@ -2193,7 +2193,7 @@ type Commit
 "Describes all files that have been changed by a commit"
 type ChangedFiles
 @goModel(
-  model: "soko/pkg/models.ChangedFiles"
+  model: "github.com/expeditioneer/gentoo-soko/pkg/models.ChangedFiles"
 ) {
   "All files that have been added by this commit"
   Added: [ChangedFile!]!
@@ -2208,7 +2208,7 @@ type ChangedFiles
 "Describes a changed file by a commit"
 type ChangedFile
 @goModel(
-  model: "soko/pkg/models.ChangedFile"
+  model: "github.com/expeditioneer/gentoo-soko/pkg/models.ChangedFile"
 ) {
   "The path to the changed file"
   Path: String!
@@ -2220,7 +2220,7 @@ type ChangedFile
 "A keyword change of a commit"
 type KeywordChange
 @goModel(
-  model: "soko/pkg/models.KeywordChange"
+  model: "github.com/expeditioneer/gentoo-soko/pkg/models.KeywordChange"
 ) {
   "The id of the keyword change to uniquely identify the keyword change"
   Id: String!
@@ -2256,7 +2256,7 @@ type KeywordChange
 	&ast.Source{Name: "pkg/api/graphql/schema/types/useflag.graphql", Input: `"A useflag"
 type Useflag
   @goModel(
-    model: "soko/pkg/models.Useflag"
+    model: "github.com/expeditioneer/gentoo-soko/pkg/models.Useflag"
   ) {
 
   "The id of the useflag to uniquely identify the useflag"

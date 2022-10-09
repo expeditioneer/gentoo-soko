@@ -4,10 +4,10 @@ package packages
 
 import (
 	"encoding/json"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/go-pg/pg"
 	"net/http"
-	"soko/pkg/database"
-	"soko/pkg/models"
 )
 
 // Suggest returns json encoded suggestions of

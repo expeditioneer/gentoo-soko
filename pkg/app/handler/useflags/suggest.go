@@ -4,10 +4,10 @@ package useflags
 
 import (
 	"encoding/json"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/go-pg/pg/v9"
 	"net/http"
-	"soko/pkg/database"
-	"soko/pkg/models"
 )
 
 // Suggest returns a json encoded suggestions of

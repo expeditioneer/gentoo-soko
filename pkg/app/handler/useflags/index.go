@@ -3,10 +3,10 @@
 package useflags
 
 import (
+	utils2 "github.com/expeditioneer/gentoo-soko/pkg/app/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"html/template"
 	"net/http"
-	utils2 "soko/pkg/app/utils"
-	"soko/pkg/models"
 )
 
 // Index renders a template to show the index page of the USE flags

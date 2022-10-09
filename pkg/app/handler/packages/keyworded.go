@@ -3,8 +3,8 @@
 package packages
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/app/handler/feeds"
 	"net/http"
-	"soko/pkg/app/handler/feeds"
 )
 
 // Keyworded renders a template containing

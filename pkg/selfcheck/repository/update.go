@@ -3,7 +3,7 @@
 package repository
 
 import (
-	"soko/pkg/selfcheck/portage"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/portage"
 )
 
 func Import() {

@@ -3,8 +3,8 @@
 package packages
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/app/handler/feeds"
 	"net/http"
-	"soko/pkg/app/handler/feeds"
 )
 
 // Added renders a template containing a list of 50 recently added versions.

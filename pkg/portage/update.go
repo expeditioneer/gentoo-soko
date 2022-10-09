@@ -3,14 +3,14 @@
 package portage
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/repository"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/utils"
 	"io/ioutil"
 	"log"
-	"soko/pkg/config"
-	"soko/pkg/database"
-	"soko/pkg/logger"
-	"soko/pkg/models"
-	"soko/pkg/portage/repository"
-	"soko/pkg/portage/utils"
 	"strings"
 	"time"
 )

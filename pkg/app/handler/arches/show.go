@@ -1,10 +1,10 @@
 package arches
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/app/handler/feeds"
+	"github.com/expeditioneer/gentoo-soko/pkg/app/handler/packages"
+	"github.com/expeditioneer/gentoo-soko/pkg/app/utils"
 	"net/http"
-	"soko/pkg/app/handler/feeds"
-	"soko/pkg/app/handler/packages"
-	"soko/pkg/app/utils"
 	"strings"
 )
 

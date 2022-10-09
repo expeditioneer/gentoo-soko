@@ -4,13 +4,13 @@ package repository
 
 import (
 	"encoding/xml"
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/storage"
 	"io/ioutil"
 	"os"
 	"regexp"
-	"soko/pkg/config"
-	"soko/pkg/logger"
-	"soko/pkg/models"
-	"soko/pkg/selfcheck/storage"
 	"strings"
 )
 
@@ -28,7 +28,6 @@ func UpdateCategory(path string) {
 		updateModifiedCategory(path)
 	}
 }
-
 
 // updateModifiedCategory adds a category to the database or
 // updates it. To do so, it parses the metadata from metadata.xml
@@ -51,7 +50,7 @@ func updateModifiedCategory(changedFile string) {
 	})
 }
 
-func addCategory(category *models.Category){
+func addCategory(category *models.Category) {
 	found := false
 	for _, cat := range storage.Categories {
 		if cat.Name == category.Name {

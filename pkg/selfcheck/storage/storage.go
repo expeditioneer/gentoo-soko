@@ -2,12 +2,12 @@
 
 package storage
 
-import "soko/pkg/models"
+import "github.com/expeditioneer/gentoo-soko/pkg/models"
 
 var (
-	Packages []*models.Package
-	Versions []*models.Version
-	Useflags []*models.Useflag
-	Masks []*models.Mask
+	Packages   []*models.Package
+	Versions   []*models.Version
+	Useflags   []*models.Useflag
+	Masks      []*models.Mask
 	Categories []*models.Category
 )

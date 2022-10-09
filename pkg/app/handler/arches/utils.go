@@ -3,11 +3,11 @@
 package arches
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/app/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"html/template"
 	"net/http"
-	"soko/pkg/app/utils"
-	"soko/pkg/database"
-	"soko/pkg/models"
 )
 
 // getPageData creates the data used in all

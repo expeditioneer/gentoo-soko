@@ -3,11 +3,11 @@
 package packages
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/app/handler/feeds"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/go-pg/pg"
 	"net/http"
-	"soko/pkg/app/handler/feeds"
-	"soko/pkg/database"
-	"soko/pkg/models"
 	"strings"
 )
 

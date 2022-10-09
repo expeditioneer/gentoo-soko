@@ -1,12 +1,12 @@
 package selfcheck
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/metrics"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"log"
 	"net/http"
-	"soko/pkg/config"
-	"soko/pkg/logger"
-	"soko/pkg/metrics"
 )
 
 // Serve is used to serve the web application
@@ -24,6 +24,6 @@ func Serve() {
 func metricsHandler() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		metrics.Update()
-		promhttp.Handler().ServeHTTP(w,r)
+		promhttp.Handler().ServeHTTP(w, r)
 	})
 }

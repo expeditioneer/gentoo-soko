@@ -3,11 +3,11 @@
 package repository
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/storage"
 	"regexp"
-	"soko/pkg/config"
-	"soko/pkg/models"
-	"soko/pkg/portage/utils"
-	"soko/pkg/selfcheck/storage"
 	"strings"
 )
 
@@ -113,7 +113,7 @@ func updateModifiedVersion(changedFile string) {
 
 }
 
-func addVersion(newVersion *models.Version){
+func addVersion(newVersion *models.Version) {
 	found := false
 	for _, v := range storage.Versions {
 		if v.Id == newVersion.Id {

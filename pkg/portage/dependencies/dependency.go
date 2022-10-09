@@ -2,13 +2,13 @@ package dependencies
 
 import (
 	"fmt"
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"io/ioutil"
 	"net/http"
 	"regexp"
-	"soko/pkg/config"
-	"soko/pkg/database"
-	"soko/pkg/logger"
-	"soko/pkg/models"
 	"strconv"
 	"strings"
 	"sync"

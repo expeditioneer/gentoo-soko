@@ -2,12 +2,12 @@ package bugs
 
 import (
 	"encoding/csv"
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"net/http"
 	"regexp"
-	"soko/pkg/config"
-	"soko/pkg/database"
-	"soko/pkg/logger"
-	"soko/pkg/models"
 	"strings"
 	"time"
 )

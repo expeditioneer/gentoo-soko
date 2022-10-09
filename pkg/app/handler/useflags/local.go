@@ -3,12 +3,12 @@
 package useflags
 
 import (
+	utils2 "github.com/expeditioneer/gentoo-soko/pkg/app/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/go-pg/pg"
 	"html/template"
 	"net/http"
-	utils2 "soko/pkg/app/utils"
-	"soko/pkg/database"
-	"soko/pkg/models"
 	"sort"
 )
 

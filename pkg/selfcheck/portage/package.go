@@ -4,13 +4,13 @@ package repository
 
 import (
 	"encoding/xml"
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/storage"
 	"io/ioutil"
 	"os"
 	"regexp"
-	"soko/pkg/config"
-	"soko/pkg/logger"
-	"soko/pkg/models"
-	"soko/pkg/selfcheck/storage"
 	"strings"
 )
 
@@ -83,8 +83,7 @@ func updateModifiedPackage(changedFile string) {
 
 }
 
-
-func addPackage(newPackage *models.Package){
+func addPackage(newPackage *models.Package) {
 	found := false
 	for _, p := range storage.Packages {
 		if p.Atom == newPackage.Atom {

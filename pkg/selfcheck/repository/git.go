@@ -3,13 +3,12 @@
 package repository
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing"
 	"github.com/go-git/go-git/v5/plumbing/object"
 	"os"
-	"soko/pkg/config"
 )
-
 
 func UpdateRepo() error {
 
@@ -51,4 +50,3 @@ func AllFiles() []string {
 
 	return allFiles
 }
-

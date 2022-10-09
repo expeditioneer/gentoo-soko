@@ -3,10 +3,10 @@
 package categories
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/app/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"html/template"
 	"net/http"
-	"soko/pkg/app/utils"
-	"soko/pkg/models"
 	"strings"
 )
 

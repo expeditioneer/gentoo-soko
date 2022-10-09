@@ -2,9 +2,9 @@ package feeds
 
 import (
 	"fmt"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/gorilla/feeds"
 	"net/http"
-	"soko/pkg/models"
 	"time"
 )
 

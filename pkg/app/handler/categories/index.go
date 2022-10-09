@@ -4,9 +4,9 @@ package categories
 
 import (
 	"encoding/json"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"net/http"
-	"soko/pkg/database"
-	"soko/pkg/models"
 )
 
 // Index renders a template to show all categories

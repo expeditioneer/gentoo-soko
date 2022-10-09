@@ -3,9 +3,9 @@
 package utils
 
 import (
-	"soko/pkg/database"
-	"soko/pkg/logger"
-	"soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"time"
 )
 

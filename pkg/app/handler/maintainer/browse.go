@@ -1,9 +1,9 @@
 package maintainer
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"net/http"
-	"soko/pkg/database"
-	"soko/pkg/models"
 	"sort"
 	"strings"
 )

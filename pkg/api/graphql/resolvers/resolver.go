@@ -5,12 +5,12 @@ package resolvers
 import (
 	"context"
 	"errors"
+	"github.com/expeditioneer/gentoo-soko/pkg/api/graphql/generated"
+	"github.com/expeditioneer/gentoo-soko/pkg/app/handler/packages"
+	"github.com/expeditioneer/gentoo-soko/pkg/app/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/go-pg/pg/v9/orm"
-	"soko/pkg/api/graphql/generated"
-	"soko/pkg/app/handler/packages"
-	"soko/pkg/app/utils"
-	"soko/pkg/database"
-	"soko/pkg/models"
 	"strings"
 	"time"
 )

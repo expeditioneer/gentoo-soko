@@ -3,11 +3,11 @@
 package repository
 
 import (
-	"soko/pkg/config"
-	"soko/pkg/logger"
-	"soko/pkg/models"
-	"soko/pkg/portage/utils"
-	"soko/pkg/selfcheck/storage"
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/storage"
 	"strings"
 )
 

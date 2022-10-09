@@ -1,8 +1,8 @@
 package arches
 
 import (
+	utils2 "github.com/expeditioneer/gentoo-soko/pkg/app/utils"
 	"net/http"
-	utils2 "soko/pkg/app/utils"
 )
 
 // Index renders a template to show the landing page containing links to all arches feeds

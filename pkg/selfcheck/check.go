@@ -1,17 +1,17 @@
 package selfcheck
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/metrics"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/repository"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/storage"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
-	"soko/pkg/database"
-	"soko/pkg/logger"
-	"soko/pkg/models"
-	"soko/pkg/selfcheck/metrics"
-	"soko/pkg/selfcheck/repository"
-	"soko/pkg/selfcheck/storage"
 )
 
-func AllPackages(){
+func AllPackages() {
 	logger.Info.Println("selfcheck: Preparing new check...")
 	logger.Info.Println("selfcheck: Updating selfcheck repository")
 	repository.UpdateRepo()
@@ -28,7 +28,7 @@ func AllPackages(){
 	logger.Info.Println("selfcheck: Finished check")
 }
 
-func resetMetrics(){
+func resetMetrics() {
 	for _, metric := range metrics.MissingPackages {
 		prometheus.Unregister(metric)
 	}
@@ -39,8 +39,7 @@ func resetMetrics(){
 	metrics.MissingVersions = map[string]prometheus.Gauge{}
 }
 
-
-func checkCategory(category *models.Category){
+func checkCategory(category *models.Category) {
 	// create a client (safe to share across requests)
 
 	database.Connect()
@@ -52,7 +51,6 @@ func checkCategory(category *models.Category){
 		Relation("Packages").
 		Relation("Packages.Versions").
 		Select()
-
 
 	if err != nil {
 		logger.Error.Println(err)
@@ -75,8 +73,8 @@ func checkCategory(category *models.Category){
 					metric.Set(1)
 				} else {
 					metrics.MissingPackages[localPackage.Atom] = promauto.NewGauge(prometheus.GaugeOpts{
-						Name: "pgo_missing_package",
-						Help: "A package that is missing on packages.g.o although it's present in the tree",
+						Name:        "pgo_missing_package",
+						Help:        "A package that is missing on packages.g.o although it's present in the tree",
 						ConstLabels: prometheus.Labels{"atom": localPackage.Atom},
 					})
 					metrics.MissingPackages[localPackage.Atom].Set(1)
@@ -89,8 +87,7 @@ func checkCategory(category *models.Category){
 
 }
 
-func checkVersions(remotePackage *models.Package){
-
+func checkVersions(remotePackage *models.Package) {
 
 	for _, localVersion := range storage.Versions {
 
@@ -110,8 +107,8 @@ func checkVersions(remotePackage *models.Package){
 					metric.Set(1)
 				} else {
 					metrics.MissingVersions[localVersion.Id] = promauto.NewGauge(prometheus.GaugeOpts{
-						Name: "pgo_missing_version",
-						Help: "A version that is missing on packages.g.o although it's present in the tree",
+						Name:        "pgo_missing_version",
+						Help:        "A version that is missing on packages.g.o although it's present in the tree",
 						ConstLabels: prometheus.Labels{"id": localVersion.Id},
 					})
 					metrics.MissingVersions[localVersion.Id].Set(1)
@@ -123,4 +120,3 @@ func checkVersions(remotePackage *models.Package){
 		}
 	}
 }
-

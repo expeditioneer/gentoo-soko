@@ -2,11 +2,11 @@ package packages
 
 import (
 	"encoding/json"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/go-pg/pg"
 	"github.com/go-pg/pg/v9/orm"
 	"net/http"
-	"soko/pkg/database"
-	"soko/pkg/models"
 )
 
 // Show renders a template to show a given package

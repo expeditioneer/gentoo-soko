@@ -12,11 +12,11 @@
 package repository
 
 import (
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/utils"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/storage"
 	"regexp"
-	"soko/pkg/logger"
-	"soko/pkg/models"
-	"soko/pkg/portage/utils"
-	"soko/pkg/selfcheck/storage"
 	"strings"
 	"time"
 )
@@ -171,7 +171,7 @@ func comparedVersions(operator string, versionSpecifier string, packageAtom stri
 	versionSpecifier = strings.Split(versionSpecifier, ":")[0]
 
 	for _, version := range storage.Versions {
-		if  version.Atom == packageAtom {
+		if version.Atom == packageAtom {
 			versions = append(versions, version)
 		}
 	}
@@ -207,7 +207,7 @@ func allRevisions(versionSpecifier string, packageAtom string) []*models.Version
 	versionWithoutRevision = strings.ReplaceAll(versionWithoutRevision, "~", "")
 
 	for _, version := range storage.Versions {
-		if  strings.HasPrefix(version.Id, versionWithoutRevision) {
+		if strings.HasPrefix(version.Id, versionWithoutRevision) {
 			versions = append(versions, version)
 		}
 	}

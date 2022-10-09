@@ -3,8 +3,8 @@ package utils
 import (
 	b64 "encoding/base64"
 	"encoding/json"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"net/http"
-	"soko/pkg/models"
 )
 
 func GetDefaultUserPreferences() models.UserPreferences {

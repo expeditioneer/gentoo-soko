@@ -4,12 +4,12 @@ package database
 
 import (
 	"context"
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/go-pg/pg/v9"
 	"github.com/go-pg/pg/v9/orm"
 	"log"
-	"soko/pkg/config"
-	"soko/pkg/logger"
-	"soko/pkg/models"
 )
 
 // DBCon is the connection handle

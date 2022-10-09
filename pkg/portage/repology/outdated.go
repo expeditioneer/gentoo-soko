@@ -3,13 +3,13 @@ package repology
 import (
 	"bytes"
 	"encoding/json"
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/database"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"io/ioutil"
 	"log"
 	"net/http"
-	"soko/pkg/config"
-	"soko/pkg/database"
-	"soko/pkg/logger"
-	"soko/pkg/models"
 	"strings"
 	"time"
 )
