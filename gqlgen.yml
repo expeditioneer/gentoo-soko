@@ -13,4 +13,4 @@ resolver:
   package: resolvers
   type: Resolver
 
-autobind: []
+autobind: [ ]

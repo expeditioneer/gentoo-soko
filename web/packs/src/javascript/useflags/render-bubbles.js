@@ -1,11 +1,11 @@
 var useflagChartCreated = false;
 
 // wait for d3 and render the bubb
-var checkD3 = setInterval(function() {
+var checkD3 = setInterval(function () {
     if (typeof d3 !== 'undefined') {
         clearInterval(checkD3);
 
-        if(!useflagChartCreated){
+        if (!useflagChartCreated) {
             createUseflagChart();
         }
 
@@ -19,7 +19,7 @@ var checkD3 = setInterval(function() {
 // to turbolinks.
 function deleteDuplicate() {
     var bubbles = document.querySelectorAll(".bubble");
-    while(bubbles.length > 1){
+    while (bubbles.length > 1) {
         bubbles[1].remove();
         bubbles = document.querySelectorAll(".bubble");
     }
@@ -32,7 +32,7 @@ setTimeout(deleteDuplicate, 1000);
 
 function createUseflagChart() {
 
-    if(!useflagChartCreated) {
+    if (!useflagChartCreated) {
 
         $('#bubble-placeholder').show();
 

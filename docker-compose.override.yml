@@ -15,7 +15,7 @@ services:
     environment:
       SOKO_LOG_FILE: '/var/log/soko/web.log'
       SOKO_DEVMODE: 'true'
-#      SOKO_DEBUG: 'true'
+    #      SOKO_DEBUG: 'true'
     ports:
       - 127.0.0.1:5000:5000
     depends_on:
@@ -40,7 +40,7 @@ services:
     environment:
       SOKO_LOG_FILE: '/var/log/soko/updater.log'
       SOKO_DEVMODE: 'true'
-#      SOKO_DEBUG: 'true'
+    #      SOKO_DEBUG: 'true'
     depends_on:
       - db
   selfcheck:

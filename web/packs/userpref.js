@@ -1,10 +1,10 @@
-window.onload = function() {
-    document.body.onscroll = function(){
+window.onload = function () {
+    document.body.onscroll = function () {
         updateNav();
     };
 };
 
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("turbolinks:load", function () {
 
     updateNav();
 })
@@ -12,22 +12,22 @@ document.addEventListener("turbolinks:load", function() {
 function updateNav() {
     var elements = [];
 
-    if(window.location.href.includes("/user/preferences/packages")){
+    if (window.location.href.includes("/user/preferences/packages")) {
         elements = ['overview', 'dependencies', 'qa-report', 'pull-requests', 'bugs', 'security', 'changelog', 'tabs'];
-    }else if(window.location.href.includes("/user/preferences/arches")){
+    } else if (window.location.href.includes("/user/preferences/arches")) {
         elements = ['keywords', 'defaults'];
     }
 
-    for(var i = 0; i < elements.length; i++){
+    for (var i = 0; i < elements.length; i++) {
         if (document.getElementById(elements[i]).getBoundingClientRect().y <= window.innerHeight) {
-            document.getElementById(elements[i]+"-tab").classList.add("active");
+            document.getElementById(elements[i] + "-tab").classList.add("active");
         } else {
-            document.getElementById(elements[i]+"-tab").classList.remove("active");
+            document.getElementById(elements[i] + "-tab").classList.remove("active");
         }
     }
 }
 
-if(document.getElementById("myModal") != null) {
+if (document.getElementById("myModal") != null) {
     var modal = document.getElementById("myModal");
 
     var img1 = document.getElementById("img1");

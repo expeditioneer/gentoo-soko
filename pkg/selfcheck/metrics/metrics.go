@@ -5,7 +5,6 @@ import (
 )
 
 var (
-	MissingVersions = map[string]prometheus.Gauge {}
-	MissingPackages = map[string]prometheus.Gauge {}
+	MissingVersions = map[string]prometheus.Gauge{}
+	MissingPackages = map[string]prometheus.Gauge{}
 )
-
