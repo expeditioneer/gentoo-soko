@@ -257,11 +257,3 @@ func GetPkgcheckClassIndex(class string) int {
 	}
 	return -1
 }
-
-func createSlice(n int) []int {
-	slice := []int{}
-	for i := 0; i <= n; i++ {
-		slice = append(slice, i)
-	}
-	return slice
-}
