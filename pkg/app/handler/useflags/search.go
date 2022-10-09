@@ -15,7 +15,7 @@ import (
 // for a given query of USE flags
 func Search(w http.ResponseWriter, r *http.Request) {
 
-	results, _ := r.URL.Query()["q"]
+	results := r.URL.Query()["q"]
 
 	param := ""
 	var useflags []models.Useflag
