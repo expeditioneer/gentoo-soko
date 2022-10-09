@@ -30,7 +30,7 @@ func Suggest(w http.ResponseWriter, r *http.Request) {
 	type Result struct {
 		Name        string `json:"name"`
 		Category    string `json:"category"`
-		description string `json:"description"`
+		Description string `json:"description"`
 	}
 
 	type Results struct {
@@ -43,7 +43,7 @@ func Suggest(w http.ResponseWriter, r *http.Request) {
 		results = append(results, &Result{
 			Name:        gpackage.Name,
 			Category:    gpackage.Category,
-			description: gpackage.Versions[0].Description,
+			Description: gpackage.Versions[0].Description,
 		})
 	}
 
