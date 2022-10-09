@@ -6,18 +6,6 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	"soko/pkg/app"
-	"soko/pkg/config"
-	"soko/pkg/logger"
-	"soko/pkg/portage"
-	"soko/pkg/portage/bugs"
-	"soko/pkg/portage/dependencies"
-	"soko/pkg/portage/github"
-	"soko/pkg/portage/maintainers"
-	"soko/pkg/portage/pkgcheck"
-	"soko/pkg/portage/projects"
-	"soko/pkg/portage/repology"
-	"soko/pkg/selfcheck"
 	"time"
 )
 
@@ -120,5 +108,5 @@ func waitForPostgres() {
 
 func runSelfChecks() {
 	gocron.Every(1).Hour().From(gocron.NextTick()).Do(selfcheck.AllPackages)
-	<- gocron.Start()
+	<-gocron.Start()
 }
