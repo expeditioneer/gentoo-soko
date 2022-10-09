@@ -179,17 +179,6 @@ func getSearchData(packages []models.Package, search string) interface{} {
 	}
 }
 
-// getChangelogData returns the data used in changelog templates
-func getChangelogData(commits []*models.Commit, atom string) interface{} {
-	return struct {
-		Commits []*models.Commit
-		Atom    string
-	}{
-		Commits: commits,
-		Atom:    atom,
-	}
-}
-
 // GetFuncMap returns the FuncMap used in templates
 func GetFuncMap() template.FuncMap {
 	return template.FuncMap{
@@ -447,13 +436,6 @@ func showRemovalNotice(versions []*models.Version) bool {
 		}
 	}
 	return showNotice
-}
-
-// sort the versions in ascending order
-func sortVersionsAsc(versions []*models.Version) {
-	sort.Slice(versions, func(i, j int) bool {
-		return versions[i].SmallerThan(*versions[j])
-	})
 }
 
 // sort the versions in descending order
