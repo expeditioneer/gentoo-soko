@@ -64,7 +64,6 @@ module.exports = {
             Tether: 'tether',
             'window.Tether': 'tether',
             Popper: ['popper.js', 'default'],
-            'window.Tether': 'tether',
             Modal: 'exports-loader?Modal!bootstrap/js/dist/modal',
         }),
     ],
