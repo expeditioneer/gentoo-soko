@@ -2,6 +2,18 @@ package main
 
 import (
 	"flag"
+	"github.com/expeditioneer/gentoo-soko/pkg/app"
+	"github.com/expeditioneer/gentoo-soko/pkg/config"
+	"github.com/expeditioneer/gentoo-soko/pkg/logger"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/bugs"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/dependencies"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/github"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/maintainers"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/pkgcheck"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/projects"
+	"github.com/expeditioneer/gentoo-soko/pkg/portage/repology"
+	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck"
 	"github.com/jasonlvhit/gocron"
 	"io"
 	"io/ioutil"
