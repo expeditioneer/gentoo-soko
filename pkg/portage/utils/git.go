@@ -45,7 +45,7 @@ func ChangedFiles(startCommit string, endCommit string) []string {
 	cmd.Dir = config.PortDir()
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		logger.Error.Println("ERROR: cmd.Run() failed with %s\n", err)
+		logger.Error.Println("ERROR: cmd.Run() failed with", err)
 		return changedFiles
 	}
 
@@ -76,7 +76,7 @@ func GetCommits(startCommit string, endCommit string) []string {
 	cmd.Dir = config.PortDir()
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		logger.Error.Println("cmd.Run() failed with %s\n", err)
+		logger.Error.Println("cmd.Run() failed with", err)
 		return commits
 	}
 
