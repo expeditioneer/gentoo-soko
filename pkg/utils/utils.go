@@ -5,7 +5,7 @@ import "sort"
 // Deduplicate accepts a slice of strings and returns
 // a slice which only contains unique items.
 func Deduplicate(items []string) []string {
-	if items != nil && len(items) > 1 {
+	if len(items) > 1 {
 		sort.Strings(items)
 		j := 0
 		for i := 1; i < len(items); i++ {
