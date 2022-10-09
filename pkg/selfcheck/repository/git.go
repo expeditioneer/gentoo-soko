@@ -15,14 +15,14 @@ func UpdateRepo() error {
 	r, err := git.PlainOpen(config.SelfCheckPortDir())
 
 	if err != nil {
-		r, err = git.PlainClone(config.SelfCheckPortDir(), false, &git.CloneOptions{
+		r, _ = git.PlainClone(config.SelfCheckPortDir(), false, &git.CloneOptions{
 			URL:      "https://github.com/gentoo-mirror/gentoo",
 			Depth:    5,
 			Progress: os.Stdout,
 		})
 	}
 
-	w, err := r.Worktree()
+	w, _ := r.Worktree()
 	err = w.Pull(&git.PullOptions{RemoteName: "origin", ReferenceName: "stable"})
 
 	return err
