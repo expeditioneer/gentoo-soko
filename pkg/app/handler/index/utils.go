@@ -165,7 +165,7 @@ func getFuncMap() template.FuncMap {
 // packages containing a thousands comma
 func formatPackageCount(packageCount int) string {
 	packages := strconv.Itoa(packageCount)
-	if len(string(packageCount)) == 6 {
+	if len(string(rune(packageCount))) == 6 {
 		return packages[:3] + "," + packages[3:]
 	} else if len(packages) == 5 {
 		return packages[:2] + "," + packages[2:]
