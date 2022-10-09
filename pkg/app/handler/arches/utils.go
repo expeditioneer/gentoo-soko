@@ -10,18 +10,6 @@ import (
 	"net/http"
 )
 
-// getPageData creates the data used in all
-// templates used in the arches section
-func getPageData() interface{} {
-	return struct {
-		Header      models.Header
-		Application models.Application
-	}{
-		Header:      models.Header{Title: "Architectures – ", Tab: "arches"},
-		Application: utils.GetApplicationData(),
-	}
-}
-
 // getStabilizedVersionsForArch returns the given number of recently
 // stabilized versions of a specific arch
 func getStabilizedVersionsForArch(arch string, n int) ([]*models.Version, error) {
