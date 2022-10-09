@@ -14,7 +14,7 @@ import (
 // USE flags based on the given query
 func Suggest(w http.ResponseWriter, r *http.Request) {
 
-	results, _ := r.URL.Query()["q"]
+	results := r.URL.Query()["q"]
 
 	param := results[0]
 
