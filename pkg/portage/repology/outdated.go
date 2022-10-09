@@ -66,7 +66,7 @@ func getOutdatedStartingWith(letter rune) []*models.OutdatedPackages {
 	blockedPackages := readBlocklist("ignored-packages")
 
 	var outdatedVersions []*models.OutdatedPackages
-	for packagename, _ := range repoPackages {
+	for packagename := range repoPackages {
 		atom := ""
 		newest := ""
 		version := ""
