@@ -40,10 +40,10 @@ func getSearchHistoryPackages(r *http.Request) []models.Package {
 			Where(getSearchHistoryQuery(packagesList)).
 			Relation("Versions").
 			Select()
-		return getSortedSearchHistory(packagesList, searchedPackages)
 		if err != nil {
 			return searchedPackages
 		}
+		return getSortedSearchHistory(packagesList, searchedPackages)
 	}
 	return searchedPackages
 }
