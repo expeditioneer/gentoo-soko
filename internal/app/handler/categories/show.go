@@ -15,7 +15,7 @@ import (
 func Show(w http.ResponseWriter, r *http.Request) {
 
 	if strings.HasSuffix(r.URL.Path, ".json") {
-		buildJson(w, r)
+		buildJSON(w, r)
 		return
 	}
 
@@ -36,7 +36,7 @@ func Show(w http.ResponseWriter, r *http.Request) {
 }
 
 // build the json for the category
-func buildJson(w http.ResponseWriter, r *http.Request) {
+func buildJSON(w http.ResponseWriter, r *http.Request) {
 
 	category := new(models.Category)
 	err := database.DBCon.Model(category).
