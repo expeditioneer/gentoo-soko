@@ -12,7 +12,7 @@ import (
 )
 
 // build the json for the package
-func buildJson(w http.ResponseWriter, r *http.Request) {
+func buildJSON(w http.ResponseWriter, r *http.Request) {
 
 	atom := getAtom(r)
 	gpackage := new(models.Package)

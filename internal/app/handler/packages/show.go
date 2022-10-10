@@ -22,7 +22,7 @@ func Show(w http.ResponseWriter, r *http.Request) {
 		changelogJSON(w, r)
 		return
 	} else if strings.HasSuffix(r.URL.Path, ".json") {
-		buildJson(w, r)
+		buildJSON(w, r)
 		return
 	}
 
