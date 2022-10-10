@@ -8,7 +8,7 @@ import (
 	"github.com/expeditioneer/gentoo-soko/pkg/database"
 	"github.com/expeditioneer/gentoo-soko/pkg/logger"
 	"github.com/expeditioneer/gentoo-soko/pkg/models"
-	"io/ioutil"
+	"io"
 	"os"
 	"regexp"
 	"strings"
@@ -135,7 +135,7 @@ func GetPkgMetadata(path string) Pkgmetadata {
 		logger.Error.Println(err)
 	}
 	defer xmlFile.Close()
-	byteValue, _ := ioutil.ReadAll(xmlFile)
+	byteValue, _ := io.ReadAll(xmlFile)
 	var pkgmetadata Pkgmetadata
 	xml.Unmarshal(byteValue, &pkgmetadata)
 	return pkgmetadata

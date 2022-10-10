@@ -9,7 +9,7 @@ import (
 	"github.com/expeditioneer/gentoo-soko/pkg/logger"
 	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/expeditioneer/gentoo-soko/pkg/utils"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strconv"
 	"strings"
@@ -148,7 +148,7 @@ func UpdatePullRequestsAfter(isOpen bool, lastUpdated, after string) {
 		logger.Error.Println(err)
 	}
 	defer response.Body.Close()
-	data, _ := ioutil.ReadAll(response.Body)
+	data, _ := io.ReadAll(response.Body)
 
 	var prData models.GitHubPullRequestQueryResult
 	json.Unmarshal([]byte(data), &prData)

@@ -7,7 +7,7 @@ import (
 	"github.com/expeditioneer/gentoo-soko/pkg/database"
 	"github.com/expeditioneer/gentoo-soko/pkg/logger"
 	"github.com/expeditioneer/gentoo-soko/pkg/models"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"strings"
@@ -31,7 +31,7 @@ func UpdateOutdated() {
 	defer database.DBCon.Close()
 
 	if config.Quiet() == "true" {
-		log.SetOutput(ioutil.Discard)
+		log.SetOutput(io.Discard)
 	}
 
 	// Get all outdated Versions

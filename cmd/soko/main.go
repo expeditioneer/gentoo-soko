@@ -16,7 +16,6 @@ import (
 	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck"
 	"github.com/jasonlvhit/gocron"
 	"io"
-	"io/ioutil"
 	"os"
 	"time"
 )
@@ -108,7 +107,7 @@ func initLoggers(infoHandler io.Writer, errorHandler io.Writer) {
 	if config.Debug() == "true" {
 		logger.Init(os.Stdout, infoHandler, errorHandler)
 	} else {
-		logger.Init(ioutil.Discard, infoHandler, errorHandler)
+		logger.Init(io.Discard, infoHandler, errorHandler)
 	}
 }
 

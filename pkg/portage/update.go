@@ -9,7 +9,7 @@ import (
 	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/expeditioneer/gentoo-soko/pkg/portage/repository"
 	"github.com/expeditioneer/gentoo-soko/pkg/portage/utils"
-	"io/ioutil"
+	"io"
 	"log"
 	"strings"
 	"time"
@@ -25,7 +25,7 @@ func Update() {
 	defer database.DBCon.Close()
 
 	if config.Quiet() == "true" {
-		log.SetOutput(ioutil.Discard)
+		log.SetOutput(io.Discard)
 	}
 
 	logger.Info.Println("Start update...")
@@ -137,7 +137,7 @@ func FullUpdate() {
 	defer database.DBCon.Close()
 
 	if config.Quiet() == "true" {
-		log.SetOutput(ioutil.Discard)
+		log.SetOutput(io.Discard)
 	}
 
 	logger.Info.Println("Full update up...")

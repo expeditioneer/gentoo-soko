@@ -6,7 +6,7 @@ import (
 	"github.com/expeditioneer/gentoo-soko/pkg/database"
 	"github.com/expeditioneer/gentoo-soko/pkg/logger"
 	"github.com/expeditioneer/gentoo-soko/pkg/models"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"time"
@@ -35,7 +35,7 @@ func UpdatePkgCheckResults() {
 	defer database.DBCon.Close()
 
 	if config.Quiet() == "true" {
-		log.SetOutput(ioutil.Discard)
+		log.SetOutput(io.Discard)
 	}
 
 	// get the pkg check results from qa-reports.gentoo.org
@@ -71,7 +71,7 @@ func parseQAReport() (PkgCheckResults, error) {
 		return PkgCheckResults{}, err
 	}
 	defer resp.Body.Close()
-	xmlData, err := ioutil.ReadAll(resp.Body)
+	xmlData, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return PkgCheckResults{}, err
 	}

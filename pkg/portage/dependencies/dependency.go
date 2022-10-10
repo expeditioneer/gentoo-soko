@@ -5,7 +5,7 @@ import (
 	"github.com/expeditioneer/gentoo-soko/pkg/database"
 	"github.com/expeditioneer/gentoo-soko/pkg/logger"
 	"github.com/expeditioneer/gentoo-soko/pkg/models"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"regexp"
 	"strconv"
@@ -142,7 +142,7 @@ func parseDependencies(atom, url, kind string) {
 
 	PackageCounter++
 
-	rawResponse, err := ioutil.ReadAll(resp.Body)
+	rawResponse, err := io.ReadAll(resp.Body)
 
 	if err != nil {
 		return

@@ -8,7 +8,7 @@ import (
 	"github.com/expeditioneer/gentoo-soko/pkg/logger"
 	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/expeditioneer/gentoo-soko/pkg/selfcheck/storage"
-	"io/ioutil"
+	"io"
 	"os"
 	"regexp"
 	"strings"
@@ -72,7 +72,7 @@ func GetCatMetadata(path string) Catmetadata {
 		logger.Error.Println(err)
 	}
 	defer xmlFile.Close()
-	byteValue, _ := ioutil.ReadAll(xmlFile)
+	byteValue, _ := io.ReadAll(xmlFile)
 	var catmetadata Catmetadata
 	xml.Unmarshal(byteValue, &catmetadata)
 	return catmetadata
