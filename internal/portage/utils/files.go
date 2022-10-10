@@ -7,8 +7,7 @@ import (
 	"os"
 )
 
-// readLines reads a whole file into memory
-// and returns a slice of its lines.
+// ReadLines reads a whole file into memory and returns a slice of its lines.
 func ReadLines(path string) ([]string, error) {
 	file, err := os.Open(path)
 	if err != nil {
@@ -24,8 +23,7 @@ func ReadLines(path string) ([]string, error) {
 	return lines, scanner.Err()
 }
 
-// FileExists checks whether the file
-// at the given path does exist
+// FileExists checks whether the file at the given path does exist
 func FileExists(path string) bool {
 	if _, err := os.Stat(path); err == nil {
 		return true
