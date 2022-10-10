@@ -146,9 +146,9 @@ func linkCommitToPackage(commitLine string, path string, id string) {
 
 		pathParts := strings.Split(strings.ReplaceAll(path, ".ebuild", ""), "/")
 
-		commitToPackageId := id + "-" + pathParts[0] + "/" + strings.Split(commitLine, "/")[1]
+		commitToPackageID := id + "-" + pathParts[0] + "/" + strings.Split(commitLine, "/")[1]
 		commitToPackage = &models.CommitToPackage{
-			Id:          commitToPackageId,
+			Id:          commitToPackageID,
 			CommitId:    id,
 			PackageAtom: pathParts[0] + "/" + strings.Split(commitLine, "/")[1],
 		}
@@ -156,7 +156,7 @@ func linkCommitToPackage(commitLine string, path string, id string) {
 		_, err := database.DBCon.Model(commitToPackage).OnConflict("(id) DO NOTHING").Insert()
 
 		if err != nil {
-			logger.Error.Println("Error during updating CommitToPackage: " + commitToPackageId)
+			logger.Error.Println("Error during updating CommitToPackage: " + commitToPackageID)
 			logger.Error.Println(err)
 		}
 
