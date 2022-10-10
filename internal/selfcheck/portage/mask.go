@@ -16,7 +16,6 @@ import (
 	"github.com/expeditioneer/gentoo-soko/internal/models"
 	"github.com/expeditioneer/gentoo-soko/internal/portage/utils"
 	"github.com/expeditioneer/gentoo-soko/internal/selfcheck/storage"
-	"regexp"
 	"strings"
 	"time"
 )
@@ -35,21 +34,6 @@ func UpdateMask(path string) {
 			parsePackageMask(packageMask)
 		}
 	}
-}
-
-// versionSpecifierToPackageAtom returns the package atom from a given version specifier
-func versionSpecifierToPackageAtom(versionSpecifier string) string {
-	gpackage := strings.ReplaceAll(versionSpecifier, ">", "")
-	gpackage = strings.ReplaceAll(gpackage, "<", "")
-	gpackage = strings.ReplaceAll(gpackage, "=", "")
-	gpackage = strings.ReplaceAll(gpackage, "~", "")
-
-	gpackage = strings.Split(gpackage, ":")[0]
-
-	versionnumber := regexp.MustCompile(`-[0-9]`)
-	gpackage = versionnumber.Split(gpackage, 2)[0]
-
-	return gpackage
 }
 
 // parseAuthorLine parses the first line in the package.mask file
