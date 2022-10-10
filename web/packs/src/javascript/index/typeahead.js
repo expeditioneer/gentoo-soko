@@ -16,7 +16,7 @@ $(function () {
                         q: "{{query}}"
                     }
                 }, 'results'],
-                template: '<span class="kk-suggest-cat">{{category}}</span>/<span class="kk-suggest-pkg">{{name}}</span> <span class="kk-suggest-detail">{{description}}</span>'
+                template: '<span class="kk-suggest-cat">{{category}}</span>/<span class="kk-suggest-internal">{{name}}</span> <span class="kk-suggest-detail">{{description}}</span>'
             }
         },
         callback: {

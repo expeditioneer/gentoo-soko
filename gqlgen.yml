@@ -2,14 +2,14 @@
 # for detailed .gqlgen.yml documentation.
 
 schema:
-  - "pkg/api/graphql/schema/**/*.graphql"
+  - "internal/api/graphql/schema/**/*.graphql"
 
 exec:
-  filename: pkg/api/graphql/generated/generated.go
+  filename: internal/api/graphql/generated/generated.go
   package: generated
 
 resolver:
-  filename: pkg/api/graphql/resolvers/resolver.go
+  filename: internal/api/graphql/resolvers/resolver.go
   package: resolvers
   type: Resolver
 
