@@ -136,13 +136,13 @@ type LongdescriptionItem struct {
 
 type Upstream struct {
 	XMLName   xml.Name   `xml:"upstream"`
-	RemoteIds []RemoteId `xml:"remote-id"`
+	RemoteIds []RemoteID `xml:"remote-id"`
 	BugsTo    []string   `xml:"bugs-to"`
 	Doc       []string   `xml:"doc"`
 	Changelog []string   `xml:"changelog"`
 }
 
-type RemoteId struct {
+type RemoteID struct {
 	XMLName xml.Name `xml:"remote-id"`
 	Type    string   `xml:"type,attr"`
 	Content string   `xml:",chardata"`
