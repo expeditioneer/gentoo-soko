@@ -5,6 +5,8 @@ import (
 	"github.com/expeditioneer/gentoo-soko/pkg/database"
 	"github.com/expeditioneer/gentoo-soko/pkg/models"
 	"github.com/expeditioneer/gentoo-soko/pkg/utils"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 	"sort"
 	"strings"
 	"time"
@@ -99,7 +101,7 @@ func FullImport() {
 		}
 
 		if maintainer.Name == "" {
-			maintainer.Name = strings.Title(strings.Split(maintainer.Email, "@")[0])
+			maintainer.Name = cases.Title(language.Und, cases.NoLower).String(strings.Split(maintainer.Email, "@")[0])
 		}
 
 		if maintainer.Type == "project" && strings.HasPrefix(maintainer.Name, "Gentoo ") {
