@@ -40,7 +40,7 @@ func updateModifiedVersion(changedFile string) {
 	atom := category + "/" + packagename
 	id := atom + "-" + version
 
-	version_metadata, _ := utils.ReadLines(config.PortDir() + "/metadata/md5-cache/" + id)
+	versionMetadata, _ := utils.ReadLines(config.PortDir() + "/metadata/md5-cache/" + id)
 
 	slot := "0"
 	subslot := "0"
@@ -53,7 +53,7 @@ func updateModifiedVersion(changedFile string) {
 	license := ""
 	description := ""
 
-	for _, metadata := range version_metadata {
+	for _, metadata := range versionMetadata {
 
 		switch {
 		case strings.HasPrefix(metadata, "EAPI="):
