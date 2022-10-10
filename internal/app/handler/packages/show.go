@@ -162,7 +162,7 @@ func changelogJSON(w http.ResponseWriter, r *http.Request) {
 		}
 
 		jsonChanges = append(jsonChanges, Change{
-			Id:             commit.Id,
+			ID:             commit.Id,
 			AuthorName:     commit.AuthorName,
 			AuthorEmail:    commit.AuthorEmail,
 			AuthorDate:     commit.AuthorDate,
@@ -196,7 +196,7 @@ type Changes struct {
 }
 
 type Change struct {
-	Id             string              `json:"id"`
+	ID             string              `json:"id"`
 	AuthorName     string              `json:"author_name"`
 	AuthorEmail    string              `json:"author_email"`
 	AuthorDate     time.Time           `json:"author_date"`
