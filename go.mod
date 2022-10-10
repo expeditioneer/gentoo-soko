@@ -10,6 +10,6 @@ require (
 	github.com/gorilla/feeds v1.1.1
 	github.com/jasonlvhit/gocron v0.0.1
 	github.com/prometheus/client_golang v1.8.0
-	github.com/vektah/gqlparser/v2 v2.0.1
+	github.com/vektah/gqlparser/v2 v2.5.1
 	golang.org/x/text v0.3.2
 )
