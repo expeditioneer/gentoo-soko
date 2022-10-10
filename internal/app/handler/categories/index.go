@@ -36,7 +36,7 @@ func JSONCategories(w http.ResponseWriter, r *http.Request) {
 	for _, category := range categories {
 		jsonCategories = append(jsonCategories, CategoryDescription{
 			Name:        category.Name,
-			Url:         "https://packages.gentoo.org/categories/" + category.Name + ".json",
+			URL:         "https://packages.gentoo.org/categories/" + category.Name + ".json",
 			Description: category.Description,
 		})
 	}
@@ -57,5 +57,5 @@ func JSONCategories(w http.ResponseWriter, r *http.Request) {
 type CategoryDescription struct {
 	Name        string `json:"name"`
 	Description string `json:"description"`
-	Url         string `json:"url"`
+	URL         string `json:"url"`
 }
