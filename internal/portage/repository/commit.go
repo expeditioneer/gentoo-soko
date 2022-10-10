@@ -173,9 +173,9 @@ func linkCommitToVersion(commitLine string, path string, id string) {
 
 		pathParts := strings.Split(strings.ReplaceAll(path, ".ebuild", ""), "/")
 
-		commitToVersionId := id + "-" + pathParts[0] + "/" + pathParts[2]
+		commitToVersionID := id + "-" + pathParts[0] + "/" + pathParts[2]
 		commitToVersion = &models.CommitToVersion{
-			Id:        commitToVersionId,
+			Id:        commitToVersionID,
 			CommitId:  id,
 			VersionId: pathParts[0] + "/" + pathParts[2],
 		}
@@ -183,7 +183,7 @@ func linkCommitToVersion(commitLine string, path string, id string) {
 		_, err := database.DBCon.Model(commitToVersion).OnConflict("(id) DO NOTHING").Insert()
 
 		if err != nil {
-			logger.Error.Println("Error during updating CommitToVersion: " + commitToVersionId)
+			logger.Error.Println("Error during updating CommitToVersion: " + commitToVersionID)
 			logger.Error.Println(err)
 		}
 
